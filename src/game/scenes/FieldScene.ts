@@ -30,6 +30,10 @@ export class FieldScene extends Scene {
   private drawField(): void {
     const field = this.add.rectangle(0, 0, WORLD_WIDTH, WORLD_HEIGHT, 0x2f8f3a);
     field.setOrigin(0, 0);
+    const graphics = this.add.graphics();
+
+    graphics.fillStyle(0x2f8f3a, 1);
+    graphics.fillRect(0, 0, WORLD_WIDTH, WORLD_HEIGHT);
   }
 
   private drawRandomTents(count: number): void {
