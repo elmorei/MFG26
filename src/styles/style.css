@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #0f4f1c;
+  touch-action: none;
+  font-family: Inter, Arial, sans-serif;
+}
+
+canvas {
+  display: block;
+}
