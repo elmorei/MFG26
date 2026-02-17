@@ -12,6 +12,7 @@ export class FieldScene extends Scene {
   }
 
   create(): void {
+    this.cameras.main.setBackgroundColor(0x2f8f3a);
     this.cameras.main.setBounds(0, 0, WORLD_WIDTH, WORLD_HEIGHT);
     this.cameras.main.setZoom(1);
 
@@ -27,6 +28,8 @@ export class FieldScene extends Scene {
   }
 
   private drawField(): void {
+    const field = this.add.rectangle(0, 0, WORLD_WIDTH, WORLD_HEIGHT, 0x2f8f3a);
+    field.setOrigin(0, 0);
     const graphics = this.add.graphics();
 
     graphics.fillStyle(0x2f8f3a, 1);
