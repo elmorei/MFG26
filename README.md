@@ -45,11 +45,41 @@ This tier balances broad device support while keeping enough headroom for upcomi
             └── FieldScene.ts
 ```
 
+## Known-good toolchain
+
+- Node.js `20.18.0` (see `.nvmrc`)
+- npm `10.8.x`
+- Registry: `https://registry.npmjs.org/`
+
+The repository now includes a lightweight environment diagnostic command:
+
+```bash
+npm run doctor
+```
+
 ## Local development
 
 ```bash
+nvm use || nvm install
 npm install
 npm run dev
+```
+
+## If dependency installation fails
+
+Use this recovery sequence before spending time debugging application code:
+
+```bash
+npm run doctor
+npm config set registry https://registry.npmjs.org/
+npm run setup:clean
+```
+
+If your environment cannot reach the public npm registry, point npm to your mirror:
+
+```bash
+npm config set registry <internal-registry-url>
+npm install
 ```
 
 ## Build

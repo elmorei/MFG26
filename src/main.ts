@@ -8,7 +8,14 @@ if (!appRoot) {
   throw new Error('Root element #app is missing.');
 }
 
-new Game({
+const game = new Game({
   ...gameConfig,
   parent: appRoot
 });
+
+const resizeToWindow = (): void => {
+  game.scale.resize(window.innerWidth, window.innerHeight);
+};
+
+resizeToWindow();
+window.addEventListener('resize', resizeToWindow);
